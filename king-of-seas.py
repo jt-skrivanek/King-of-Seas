@@ -1,27 +1,28 @@
 import pygame
+import os
 
 pygame.init()
 pygame.key.set_repeat(1,5)
 screen = pygame.display.set_mode((1000, 800))
-pygame.display.set_icon(pygame.image.load(r"C:\Users\JT\Documents\Programs\King of Seas\img\icon.png"))
+pygame.display.set_icon(pygame.image.load(os.path.join("img", "icon.png"))
 pygame.display.set_caption("King of Seas")
 pygame.mouse.set_cursor((8,8),(0,0),(0,0,0,0,0,0,0,0),(0,0,0,0,0,0,0,0))
 
 red = pygame.Color(255, 0 , 0)
 white = pygame.Color(255,255,255)
 black = pygame.Color(0,0,0)
-background = pygame.image.load(r"C:\Users\JT\Documents\Programs\King of Seas\img\sea-pic.png")
-shipPic = pygame.image.load(r"C:\Users\JT\Documents\Programs\King of Seas\img\ship-pic.png")
+background = pygame.image.load(os.path.join("img", "sea-pic.png"))
+shipPic = pygame.image.load(os.path.join("img", "ship-pic.png"))
 shipRect = shipPic.get_rect()
-targetPic = pygame.image.load(r"C:\Users\JT\Documents\Programs\King of Seas\img\target-pic.png")
-enemyPic = pygame.image.load(r"C:\Users\JT\Documents\Programs\King of Seas\img\enemy-pic.png")
+targetPic = pygame.image.load(os.path.join("img", "target-pic.png"))
+enemyPic = pygame.image.load(os.path.join("img", "enemy.png"))
 enemyRect1 = enemyPic.get_rect()
 enemyRect2 = enemyPic.get_rect()
 enemyRect3 = enemyPic.get_rect()
 enemyRect4 = enemyPic.get_rect()
 enemyRect5 = enemyPic.get_rect()
 enemyRect6 = enemyPic.get_rect()
-ballPic = pygame.image.load(r"C:\Users\JT\Documents\Programs\King of Seas\img\cannon-pic.png")
+ballPic = pygame.image.load(os.path.join("img", "cannon-pic.png"))
 shipX = 450
 shipY = 350
 ballX = 2000
