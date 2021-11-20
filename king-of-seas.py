@@ -13,6 +13,7 @@ red = pygame.Color(255, 0 , 0)
 white = pygame.Color(255,255,255)
 black = pygame.Color(0,0,0)
 background = pygame.image.load(os.path.join("img", "sea-pic.png"))
+frontPic = pygame.image.load(os.path.join("img", "front-pic.png"))
 shipPic = pygame.image.load(os.path.join("img", "ship-pic.png"))
 shipRect = shipPic.get_rect()
 targetPic = pygame.image.load(os.path.join("img", "target-pic.png"))
@@ -45,6 +46,8 @@ canShoot = True
 mouseCannon = 0,0
 font = pygame.font.SysFont('Seaford', 50)
 running = True
+intro = True
+mainLoop = False
 
 def ship(x,y):
     screen.blit(shipPic,(x,y))
@@ -55,7 +58,25 @@ def enemy(x,y):
 def ball(x,y):
     screen.blit(ballPic,(x,y))
 
-while 0==0:
+while intro == True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+        if event.type == pygame.KEYDOWN:
+            intro = False
+            mainLoop = True
+
+    mousePos = pygame.mouse.get_pos()
+
+    screen.blit(background,(0,0))
+    screen.blit(frontPic,(330,100))
+    textSurface2 = font.render("King of Seas", False, (0, 0, 0))
+    screen.blit(textSurface2,(370,600))
+    screen.blit(targetPic,(mousePos))
+    pygame.display.flip()
+
+while mainLoop == True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
