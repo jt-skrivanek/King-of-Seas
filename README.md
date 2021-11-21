@@ -8,6 +8,10 @@ Controls
 --------
 Any key to start game
 
+WASD to move
+
+Mouse button 1 to shoot
+
 Space to pause
 
 Escape to unpause
